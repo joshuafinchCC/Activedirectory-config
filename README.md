@@ -193,7 +193,10 @@ This lab demonstrates how to install and configure Active Directory using Azure.
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/2b852389-18e2-4e8b-a0c2-d4e92c5c6f07" height="30%" width="30%">
         </p> 
    
-  
-</p>
+<li>ALMOST DONE! if everything is setup correctly, we should be able to log into this brand new account thats has never before logged into <b>Client1</b></li>
 
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/911d2b90-89f6-4536-888e-fe533db26f85" height="30%" width="30%">
+        </p> 
+<b>Success!</b>
 <br />

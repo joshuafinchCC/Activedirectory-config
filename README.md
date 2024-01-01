@@ -100,7 +100,7 @@ This lab demonstrates how to install and configure Active Directory using Azure.
           <li>Type out the domain path and then the name of the user ([domain name].com\[user name]). For example: <b>myportfolio.com\portfoliouser.</b></li>  
   </ul>
 <p align="center">
-        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/da97c7d1-1d1f-4b56-b900-c43361f76e47" height="40%" width="40%">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/da97c7d1-1d1f-4b56-b900-c43361f76e47" height="20%" width="20%">
         </p>  
   
 
@@ -113,16 +113,24 @@ This lab demonstrates how to install and configure Active Directory using Azure.
 
 <p>
   <ul>
-    <li>OUs act like folders that hold information, privileges, and login access of users in the directory</li>
-    <li>In the Server Manager Dashboard, go to the <b>Tools</b> tab to open the Active Directory Users and Computers console, right click on the domain (mydomain.com) and make two OUs, <b>_ADMIN</b> and <b>_EMPLOYEES</b>.</li>
-	  <ul>
-		  <li>These OUs names are needed for a later step were we create multiple accounts</li>
-	  </ul>
-    <li>In the _ADMIN OU, we'll create the user <b>Jane Doe</b> with the user name <b>jane_admin</b> and password of your creation</li>
-    <ul>
-	<li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/8ab7e7b5-b5c4-4da6-b748-03d452778879" height = 80% width = 80% /></li>
-    </ul>
-    <li>We'll be granting Jane admin privileges. Using the <b>Security Group</b>, right click on the user and open their <b>Properties</b>. Click Member Of then Add to apply the appropraite security group.</li>
+    <li>Through the Server Manager, you can select <b>Tools</b> -> <b>Acitve director Users and Computers</b>This menu allows us access to Organizational Units</li>
+        <p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/2f2bdb96-194b-4298-a2c2-65c5ab13edb3" height="40%" width="40%">
+        </p>  
+   <li>Organizational Units act like folders that hold information, privileges, and login access of users in the directory</li>
+   <li>We can select the dropdown for our domain(myportfolio.com) and make two new OUs, <b>_ADMIN</b> and <b>_EMPLOYEES</b>. We will use these OU's for a later step when we start creating multiple accounts for our domain</li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/a384239f-c0b9-4183-861b-01adc0a69e06" height="40%" width="40%">
+        </p> 
+   
+<li>In the _ADMIN OU, we'll create the user <b>Jane Smith</b> with the user name <b>jane_admin</b> and password of your preference (note the password you create as it will be needed for login) </li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/9fbe9986-3765-49e7-b93e-238380a4af58" height="40%" width="40%">
+        </p> 
+
+<li>We'll be granting Jane some admin privileges. Using the <b>Security Group</b>, right click on the user and open their <b>Properties</b>. Click Member Of then Add to apply the appropraite security group.</li>
     <ul>
 	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/e926f68b-be89-40f5-a294-b479602f9869" height = 80% width = 80% /></li>
     </ul>

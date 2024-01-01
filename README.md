@@ -70,19 +70,18 @@ This lab demonstrates how to install and configure Active Directory using Azure.
     <p align="center">
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/716f15f4-7936-4e22-ad25-f1d5924637d1" height="60%" width="60%">
         </p>  
-
-
 <br />
 
 <h3>Installing Active Directory on the Domain Controller</h3>
 
 <p>
   <ul>
-	  <li>In your Domain Controller VM, go to the Server Manager Dashboard and click on <b>Add Roles and Features</b>. Go through the installation process and upon getting to <b>Server Roles</b>, make sure to check the box for <b>Active Directory Domain Services</b></li>
-	  <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/0b835d58-c357-40ce-a759-a0770c7929c9" height = 80% width = 80% /></li>
-	  </ul>
-	 <li>Once installed, we now have to promote the server into a domain controller. To do so, you may notice a <b>warning notification</b> on the top right where the flag icon is. Click on that flag and click <b>Promote this server to a domain controller</b>. Click on Add a new forest and specify a domain name. For this tutorial, we'll name the domain <b>mydomain.com</b>, specifiy the password, and proceed with the install. Noted, you will be automatically signed out, re-log in through Remote Desktop, and installation is fully completed!</li>
+	  <li>While logged into <b>DC1</b>, go to the Server Manager Dashboard and click on <b>Add Roles and Features</b>. Go through the installation process and upon getting to <b>Server Roles</b>, make sure to check the box for <b>Active Directory Domain Services</b>. After adding this feature, proceed through the rest of the installation</li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/9cdcdd6c-61cb-4e48-aace-4ac1bfe4e1d8" height="60%" width="60%">
+        </p>  
+   <li>Once installed, we now have to promote the server into a domain controller. To do so, you may notice a <b>warning notification</b> on the top right where the flag icon is. Click on that flag and click <b>Promote this server to a domain controller</b>. Click on Add a new forest and specify a domain name. For this tutorial, we'll name the domain <b>mydomain.com</b>, specifiy the password, and proceed with the install. Noted, you will be automatically signed out, re-log in through Remote Desktop, and installation is fully completed!</li>
 	  <ul>
 	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/af0fb9e9-2f55-4fb0-a372-487d2dab317e" height = 80% width = 80% /></li>
 	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/fb6b02e1-2e22-4147-aede-1d126c634ec8" height = 80% width = 80% /></li>

@@ -124,16 +124,19 @@ This lab demonstrates how to install and configure Active Directory using Azure.
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/a384239f-c0b9-4183-861b-01adc0a69e06" height="40%" width="40%">
         </p> 
    
-<li>In the _ADMIN OU, we'll create the user <b>Jane Smith</b> with the user name <b>jane_admin</b> and password of your preference (note the password you create as it will be needed for login) </li>
-
+<li>In the _ADMIN OU, we'll create the user <b>Jane Smith</b> with the user name <b>jane_admin</b> and password of your preference (NOTE: rememberthe password you create as it will be needed for login). </li>
+<li>When creating your new admin's password, be sure to unceck the box requiring the user to change their password at next logon</li>
 <p align="center">
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/9fbe9986-3765-49e7-b93e-238380a4af58" height="40%" width="40%">
         </p> 
 
-<li>We'll be granting Jane some admin privileges. Using the <b>Security Group</b>, right click on the user and open their <b>Properties</b>. Click Member Of then Add to apply the appropraite security group.</li>
-    <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/e926f68b-be89-40f5-a294-b479602f9869" height = 80% width = 80% /></li>
-    </ul>
+<li>We'll be granting Jane some admin privileges: even though this user is part of an organizational unit <b>labled _ADMINS</b> this does not actually grant them admininstrative capabilities. To grant them permissions, right click on the user and open their <b>Properties</b>, click <b>Member Of</b> and then <b>Add</b>. Here we can type "domain" to both check the names of all the security groups under "domain" as well as add Jane to said security group. Select <b>Domain Admins</b> and hit OK</li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/da9d9596-3343-4fa5-8a82-86cacf199be6" height="60%" width="60%">
+        </p> 
+
+    
     <li>Now, the user Jane will be used to log in from here on, using the login username jane_admin.</li>
   </ul>
 </p>

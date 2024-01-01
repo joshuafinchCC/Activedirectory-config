@@ -99,7 +99,11 @@ This lab demonstrates how to install and configure Active Directory using Azure.
 	  <li>When logging back in to the domain controller VM through Remote Desktop Connection, it is important to log in with the <b>context of the domain.</b></li>
           <li>Type out the domain path and then the name of the user ([domain name].com\[user name]). For example: <b>myportfolio.com\portfoliouser.</b></li>  
   </ul>
-</p>
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/da97c7d1-1d1f-4b56-b900-c43361f76e47" height="40%" width="40%">
+        </p>  
+  
+
 
 <br />
 

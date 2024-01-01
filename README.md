@@ -36,39 +36,41 @@ This lab demonstrates how to install and configure Active Directory using Azure.
  </ul>
   
  <p align="center">
-        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/b93356fc-2a1c-4176-a0fb-270bf6691cad" height="80%" width="80%">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/b93356fc-2a1c-4176-a0fb-270bf6691cad" height="60%" width="60%">
         </p>  
     
 <ul> 
-<li>After DC1 is fully deployed, we will set it's IP Address as <i>static</i> since having it dynamic will make it difficult for the Domain Controller to communicate with our client VM.</li>
-<li>Go to your Virtual Machines in Azure and go to <b>Networking</b> then go to the link listed next to <b>Network Interface</b>. Head to <b>IP Configurations</b> under <b>settings</b>, go to the ipconfig link to open up a window to toggle the IP configuration and allocation to <b>Static</b>.</li>
+<li>Once DC1 is fully deployed, we will set it's IP Address as <i>static</i> since having it dynamic will make it difficult for the Domain Controller to communicate with our client VM.</li>
+<li>Go to your Virtual Machines in Azure, go to <b>Networking</b> and then click on the <b>Network Interface</b>. Head to <b>IP Configurations</b> under <b>settings</b>, click the ipconfig link to open up a window to toggle the IP configuration and allocation to <b>Static</b>.</li>
 </ul>
-      
-	
- <li>IP Configuration for the Domain VM</li>
+      <li>IP Configuration for <b>DC1</b></li>
       <p align="center">
-        <img src="" height="80%" width="80%">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/5e9db87a-48a0-4841-9304-d1a8f517e749" height="80%" width="80%">
+        </p>  
+<ul> 
+<li>After configuring the IP settings for <b>DC1</b>, you can now set up your second virtual machine on the same network as <b>DC1</b>. Ensure that this VM is running off the Windows 10 OS, and not the windows server we selected for <b>DC1</b>. Once finished your resource group should look something like this:</li>
+</ul>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/6e67b10a-5570-4458-8222-ca1df16cc277" height="80%" width="80%">
         </p>  
 <br />
 
 <h3>Ensuring Connectivity</h3>
 
 <p>
-  <ul>
-    <li>Logging in to the Client VM, open the Command Prompt and enter the command <b>ping [Domain Controller Private IP Address] -t</b> to endlessly send ping in order ensure reachability with the Domain Controller. Connection should time out after the first ping due to the Domain Controller's Firewall Settings.</li>
+<li>Next, we will log into <b>DC1</b> through remote desktop to allow <b>Client1</b> to ping it. Search <b>Windows Defender Firewall with Advanced Security</b> on the start menu, head to the <b>Inbound Rules</b> and enable the rules under the protocol <b>ICMPv4</b>-- specifically <i>Core Networking Diagnostics - ICMP Echo Request (ICMPv4-In). There will be two rules for this, Private and Domain. Enable both</i></li>
+<li>You will notice a <b>Server Manager</b> will automatically open on <b>DC1</b> upon logging in through remote desktop. You can leave this open for later</li>
     <ul>
-      <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/be2faa69-d835-4222-a105-b6f5201c018f" height = 80% width = 80% /></li>
+	<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/e219ceec-8f90-4e94-b5b3-e56d3cc19684" height="80%" width="80%">
+        </p>  
     </ul>
-    <li>Logging into the Domain Controller VM, go to the <b>Windows Defender Firewall with Advanced Security</b>. Head to the <b>Inbound Rules</b> and enable the rules under the protocol <b>ICMPv4</b>, specifically <i>Core Networking Diagnostics - ICMP Echo Request (ICMPv4-In)</i></li>
-    <ul>
-	<li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/63bef2fe-62b6-4230-aac2-d6528f038bc5" height = 80% width = 80% /></li>
-    </ul>
-    <li>Head back to the Client VM, and we should now be seeing replies</li>
-    <ul>
-	<li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/0918e56e-4fe8-497e-aa05-e9e4b3139042" height = 80% width = 80% /></li>
-    </ul>
-  </ul>
-</p>
+    <li>Now if we log into <b>Client 1</b> and ping it, we should see some replies from <b>DC1</b>. In this instance, our <b>DC1's Private IP</b> is 10.0.0.4, while <b>Client1's Private IP</b> is 10.0.0.5</li>
+    <p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/716f15f4-7936-4e22-ad25-f1d5924637d1" height="60%" width="60%">
+        </p>  
+
 
 <br />
 

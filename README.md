@@ -32,23 +32,23 @@ This lab demonstrates how to install and configure Active Directory using Azure.
 
 <p>
   <ul>
-    <li>Our Client VM should be installed normally using the Windows 10 image (OS)</li>
-    <ul>
-      <li>Tutorial on how to install VMs and to access them using Remote Desktop can be found <b><a href ="https://github.com/ColtonTrauCC/vm-network">here</a></b></li>
-    </ul>      
-    <li>Our Domain Controller VM using Active Directory should be created using the image <b>Windows Server 2022 Datacenter: Azure Edition - x64 Gen2</b></li>
-    <ul>
-      <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/2ba43657-9799-46d3-9140-c9952282614e" height="80%" width="80%"/></li>
-    </ul>
-    <li>After the VMs are created, we'll set the Domain Controller's IP Address as <i>static</i> since having it dynamic will make them difficult for the VM to communicate with our client VM.</li>
-    <li>Go to your Virtual Machines in Azure and go to <b>Networking</b> then go to the link listed next to <b>Network Interface</b>. Head to <b>IP Configurations</b> under <b>settings</b>, go to the ipconfig link to open up a window to toggle the IP configuration and allocation to <b>Static</b>.</li>
-    <ul>
-      <li>IP Configuration for the Domain VM</li>
-      <li><img src="https://github.com/ColtonTrauCC/active-directory/assets/147654000/f9883539-f1b2-4ada-80d9-2e0df6c2de6d" height="80%" width="80%"/></li>
-    </ul>
-  </ul>
-</p>
-
+    <li>Our first machine will be set up as the <b>Domain Controller</b> using the image <b>Windows Server 2022 Datacenter: Azure Edition - x64 Gen2</b> For the rest of this tutorial, we will refer to this VM as <b>DC1</b></li>
+ </ul>
+  
+ <p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/b93356fc-2a1c-4176-a0fb-270bf6691cad" height="80%" width="80%">
+        </p>  
+    
+<ul> 
+<li>After DC1 is fully deployed, we will set it's IP Address as <i>static</i> since having it dynamic will make it difficult for the Domain Controller to communicate with our client VM.</li>
+<li>Go to your Virtual Machines in Azure and go to <b>Networking</b> then go to the link listed next to <b>Network Interface</b>. Head to <b>IP Configurations</b> under <b>settings</b>, go to the ipconfig link to open up a window to toggle the IP configuration and allocation to <b>Static</b>.</li>
+</ul>
+      
+	
+ <li>IP Configuration for the Domain VM</li>
+      <p align="center">
+        <img src="" height="80%" width="80%">
+        </p>  
 <br />
 
 <h3>Ensuring Connectivity</h3>

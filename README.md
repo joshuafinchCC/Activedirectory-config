@@ -92,11 +92,12 @@ This lab demonstrates how to install and configure Active Directory using Azure.
   </ul>
 </p>
 <br />
-<h3>Important Log In Note</h3>
+<h3>Important Notes</h3>
 <p>
   <ul>
-    <li>When logging back in to the domain controller VM through Remote Desktop Connection, it is important to log in with the <b>context of the domain.</b></li>
-    <li>Type out the domain path and then the name of the user. For example: <b>mydomain.com\labuser.</b></li>  
+          <li>While setting up the domain, you may have to wait a few moments between each installation step as the installer populates each field. Once the installation is complete you will be signed out of <b>DC1</b></li>  
+	  <li>When logging back in to the domain controller VM through Remote Desktop Connection, it is important to log in with the <b>context of the domain.</b></li>
+          <li>Type out the domain path and then the name of the user ([domain name].com\[user name]). For example: <b>myportfolio.com\portfoliouser.</b></li>  
   </ul>
 </p>
 

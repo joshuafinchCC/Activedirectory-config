@@ -81,11 +81,14 @@ This lab demonstrates how to install and configure Active Directory using Azure.
 <p align="center">
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/9cdcdd6c-61cb-4e48-aace-4ac1bfe4e1d8" height="60%" width="60%">
         </p>  
-   <li>Once installed, we now have to promote the server into a domain controller. To do so, you may notice a <b>warning notification</b> on the top right where the flag icon is. Click on that flag and click <b>Promote this server to a domain controller</b>. Click on Add a new forest and specify a domain name. For this tutorial, we'll name the domain <b>mydomain.com</b>, specifiy the password, and proceed with the install. Noted, you will be automatically signed out, re-log in through Remote Desktop, and installation is fully completed!</li>
-	  <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/af0fb9e9-2f55-4fb0-a372-487d2dab317e" height = 80% width = 80% /></li>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/fb6b02e1-2e22-4147-aede-1d126c634ec8" height = 80% width = 80% /></li>
-    	 </ul>
+   <li>Once installed, we now have to promote the server to a domain controller. To do so, you may notice a <b>warning notification</b> on the top right where the flag icon is. Click the flag and select <b>Promote this server to a domain controller</b>. Click on Add a new forest and specify a domain name. For this tutorial, we'll name the domain <b>myportfolio.com</b>, specifiy the password, and proceed with the install. Noted, you will be automatically signed out, re-log in through Remote Desktop, and the installation is completed</li>
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/5ca0f104-b7aa-4121-9b4a-21f8f5b31475" height="40%" width="40%">
+        </p>  
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/29bc8e90-e060-43d3-9157-8cca99bb564b" height="40%" width="40%">
+        </p>  
+   
   </ul>
 </p>
 

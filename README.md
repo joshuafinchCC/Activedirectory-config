@@ -135,69 +135,65 @@ This lab demonstrates how to install and configure Active Directory using Azure.
 <p align="center">
         <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/da9d9596-3343-4fa5-8a82-86cacf199be6" height="60%" width="60%">
         </p> 
+<li>Now we can log into <b>DC1</b> with the username "jane_admin" and the password we set for them. This will be an administrative login, allowing us to continue to make changes</li>
+ 
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/f27ae4d0-fc1a-4c63-b429-d3fc03ee327c" height="20%" width="20%">
+        </p> 
 
+<br />
+
+<h3>Joining the Client1 to the Domain</h3>
+
+<p>
+  <ul>
+    <li>To allow <b>Client1</b> to log into our newly created domain, first we need to configure this VM's Domain Name System (DNS) server. Go to your Client VM in the Azure Portal and go to <b>Networking</b> and then <b>Network Interface</b>. Head to <b>DNS Servers</b> under <b>settings</b>, and set the DNS Server to <b>Custom</b>. Then, enter the Domain Controller's private IP address and save the changes. Restart the client VM in order to ensure the DNS changes are saved.(NOTE: Be sure you are using <b>DC1's Private IP Address</b> for the DNS server. In this case it is 10.0.0.4)</li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/779e0681-f96d-4aef-a948-18515b2699f6" height="40%" width="40%">
+        </p> 
+ <li>Save your new DNS settings and then restart <b>Client1</b></li>
+ <li>Note: When logging into <b>Client1</b> you will still need to use your original username and password, as we havent actually added Client1 to the domain yet. </li>
+ <li>Right click your Windows Icon and select system, click on Rename this PC (advanced) and Change.</li>
+    <li>Enter the domain and necessary credentials in order to add <b>Client1</b> to the domain (logging in as jane_admin). It is important to note that the login credentials have to be input within the context of the domain path (myportfolio.com\jane_admin).</li>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/f41db32d-08c2-406b-9417-0878327d6c8a" height="60%" width="100%">
+        </p> 
+   <li>After selecting OK, you will get a Windows Security prompt asking you to log in with an account that has permissions to join the domain. Simply use your jane_admin login. Afterwards, <b>Client1</b> will prompt you to restart: After the restart is complete you can now log in with your domain credentials instead of your normal username and password. On the domain controller, the client should now appear in Computers in the Active Directory Users and Computers panel.</li>
+
+<h3>Setting up Remote Desktop for non-administrative users on Client VM</h3>
+
+<li>Once you re-login through your jane_admin on <b>Client1</b>, you can right click the windows icon and select System. Select Remote Desktop on the right and then click "Select Users that can remotely access this PC" at the bottom. Currently only jane_admin can login to our domain, but we want to set it so every user added to the domain can also log into this computer! </li>
     
-    <li>Now, the user Jane will be used to log in from here on, using the login username jane_admin.</li>
-  </ul>
-</p>
-
-<br />
-
-<h3>Joining the Client to the Domain</h3>
-
-<p>
-  <ul>
-    <li>First, we need to configure the Domain Name System (DNS) server. Go to your Client VM in the Azure Portal and go to <b>Networking</b> then go to the link listed next to <b>Network Interface</b>. Head to <b>DNS Servers</b> under <b>settings</b>, and set the DNS Server to <b>Custom</b>. Then, enter the Domain Controller's private IP address and save the changes. Restart the client VM in order to ensure the DNS changes are saved.</li>
-    <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/09ba39f8-0e5c-4d64-b276-ab10af8a0efd" height = 80% width = 80% /></li>
-    </ul>
-    <li>In the System menu of the client VM, click on Rename this PC (advanced) and Change.</li>
-    <li>Enter the domain and necessary credentials in order to let the client join the domain (logging in as jane_admin). It is important to note that the login credentials have to be input within the context of the domain path (mydomain.com\jane_admin).</li>
-    <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/49ec7774-3dd4-4c62-81fe-91da91d80d08" height = 80% width = 80% /></li>
-    </ul>
-    <li>The client should now be part of the domain (A popup should appear welcoming you to the domain). On the domain controller, the client should now appear in Computers in the Active Directory Users and Computers panel.</li>
-    <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/a8ef09bf-36e2-4aab-8c44-d99d7b3fcb7a" height = 80% width = 80% /></li>
-    </ul>  
-  </ul>
-</p>
-
-<br />
-
-<h3>Setup Remote Desktop for non-administrative users on Client VM</h3>
-
-<p>
-  <ul>
-    <li>Before users in the domain can use the client computer, Remote Desktop has to be enabled for non-administrative users.</li>
-    <li>While logged in as the administrator (jane_admin), open <b>System Properties</b>. Click on <b>Remote Desktop</b> and Select users that can remotely access this PC.</li>  
-    <li>Allow Domain Users access to Remote Desktop. Non-administrative users can now log in to the Client.</li>
-    <ul>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/96e3a27f-83fd-40c3-86bc-f3532c24bf6b" height = 80% width = 80% /></li>
-    </ul>
-  </ul>
-</p>
-
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/f41db32d-08c2-406b-9417-0878327d6c8a" height="60%" width="100%">
+        </p> 
+<li>Click "Add" and then type "domain users" and check names. This will allow every member of the <b>Domain Users</b> securtity group to also log into Client1</li>
 <br />
 
 <h3>Creating Users and attempt to log into the Client VM with one of the users</h3>
 
 <p>
   <ul>
-    <li>In the Domain Controller VM logged in as jane_admin, open <b>Powershell ISE</b> as an administrator</li>
-    <li>Using <a href = "https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1">this powershell script</a>, we will create thousands of randomly generated accounts all with the password "Password1"</li>
-    <li>In Powershell ISE, create a new file and copy-and-paste the powershell script into the file and then run the script</li>
-    <ul>
-	    <li>All these users are generated and put into the _EMPLOYEES Organizational Unit in the Active Directory</li>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/0033e7ae-6446-46d1-ae13-3873d475e8ac" height = 80% width = 80% /></li>
-    </ul>
-    <li>Head to the Active Directory Users and Computers console and select a random username and obtain their login information by going to <b>Properties</b> and in the <b>Account</b> tab</li>
-    <ul>
-	    <li>The username generate should appear as <b>[first name].[last name]</b>, in this image the user is selecting "falojo.kugori"</li>
-	    <li><img src = "https://github.com/ColtonTrauCC/active-directory/assets/147654000/569cac00-65bf-4315-be16-6f502fb44b49" height = 80% width = 80% /></li>
-    </ul>
-    <li>Attempt to log in the Client VM using the generate username you have selected (username being <b>mydomain.com\username</b>) and the password "Password1"</li>
+    <li>For our last experiment, we will add a brand new user to the domain and try logging into <b>Client1</b></li>
+    <li>Using our jane_admin account, log into <b>DC1</b> through Remote Desktop connection. Search "Active Directory Users and Computers". Here we can select the _EMPLOYEES folder we created and add a new user (right click->new->user). Set up your new employee's account information and password (note that the new user is automatically a part of domain users!)</li>
+    <p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/0818a3b5-6f12-4acc-9012-88e9e30d5cd9" height="60%" width="80%">
+        </p> 
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/861b2fd0-d3cc-420a-881f-f9b3e7a6e26f" height="60%" width="80%">
+        </p> 
+   
+   <li>Attempt to log in the Client VM using the generate username you have selected (username being <b>mydomainname.com\username</b>) and the password you set</li>
   </ul>
+
+<p align="center">
+        <img src="https://github.com/joshuafinchCC/Activedirectory-config/assets/155266044/2b852389-18e2-4e8b-a0c2-d4e92c5c6f07" height="30%" width="30%">
+        </p> 
+   
+  
 </p>
 
 <br />

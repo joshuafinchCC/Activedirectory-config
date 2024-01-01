@@ -91,11 +91,8 @@ This lab demonstrates how to install and configure Active Directory using Azure.
    
   </ul>
 </p>
-
 <br />
-
 <h3>Important Log In Note</h3>
-
 <p>
   <ul>
     <li>When logging back in to the domain controller VM through Remote Desktop Connection, it is important to log in with the <b>context of the domain.</b></li>
